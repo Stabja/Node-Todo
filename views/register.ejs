@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Node Js Website</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script type="text/javascript" src="js/require.js"></script>
+  <script type="text/javascript" src="js/controller.js"></script>
+  <style type="text/css">
+    body {
+      background: #ECEEEF;
+      text-align: left;
+      margin: 100px auto;
+      max-width: 500px;
+      padding: 0 40px;
+      font: 18px normal;
+      color: #777B7E;
+    }
+    button{
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="POST" action="/register" class="aclr_class">
+    <h1>Sign Up</h1>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input class="form-control" type="text" placeholder="first and last" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input class="form-control" type="email" placeholder="name@email.com" name="email">
+    </div>
+    <div class="form-group">
+      <label for="book">Favourite Book:</label>
+      <input class="form-control" type="text" placeholder="title of book" name="favouriteBook">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input class="form-control" type="password" placeholder="password" name="password">
+    </div>
+    <div class="form-group">
+      <label for="password">Confirm Password:</label>
+      <input class="form-control" type="password" placeholder="Confirm Password" name="confirmPassword">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign up</button>
+  </form>
+</body>
+
+</html>

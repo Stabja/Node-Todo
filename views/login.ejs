@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Node Js Website</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script type="text/javascript" src="js/require.js"></script>
+  <script type="text/javascript" src="js/controller.js"></script>
+  <style type="text/css">
+    body {
+      background: #ECEEEF;
+      text-align: left;
+      margin: 100px auto;
+      max-width: 500px;
+      padding: 0 40px;
+      font: 18px normal;
+      color: #777B7E;
+    }
+    button{
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="POST" action="/login" class="aclr_class">
+    <h1>Log In</h1>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input class="form-control" type="email" placeholder="Enter your email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input class="form-control" type="password" placeholder="Password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</body>
+
+</html>

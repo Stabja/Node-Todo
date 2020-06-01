@@ -1,0 +1,247 @@
+.main-app-page {
+  margin: 0 auto;
+  background-color: #002b36;
+}
+
+.main-app-page header {
+  max-width: 70%;
+}
+
+.main-app-page aside {
+  max-width: 70%;
+}
+
+
+.container{
+  max-width: 1000px;
+}
+
+.create-task-form {
+  width: 100%;
+  padding: 50px;
+  padding-bottom: 100px;
+  background-color: #073642;
+}
+
+.create-task-form h1 {
+  margin: 20px;
+  color: #b3a1a1;
+}
+
+.create-task-form .form-group {
+  margin-left: 10px;
+}
+
+.create-task-form .button-group {
+  width: 100%;
+}
+
+.create-task-form .button-group .btn-primary{
+  margin-left: auto;
+}
+
+
+
+
+.posts-wrapper {
+  margin-top: 20px;
+}
+
+.feed-post {
+  height: 45px;
+  margin: 6px 10px;
+  padding: 6px 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  color: #b3a1a1;
+  background-color: #185251;
+}
+
+.feed-post:hover {
+  background-color: #2d7d66;
+}
+
+.feed-post .task-title {
+  height: 100%;
+}
+
+.feed-post .task-title label {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  text-align: center;
+  align-items: center;
+  vertical-align: center;
+  margin-top: 5px;
+}
+
+.feed-post .task-title .task-title-input {
+  font-size: 2em;
+  border: 1px solid black;
+}
+
+.feed-post .task-title span {
+  margin-left: 20px;
+  margin-right: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.feed-post .task-title span:hover{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feed-post:hover .task-title {
+  color: #fff;
+}
+
+.feed-post:hover .task-title span {
+  color: #fff;
+}
+
+.feed-post .task-title .strike {
+  text-decoration: line-through;
+}
+
+.feed-post .task-title .bold {
+  font-weight: bold;
+}
+
+.feed-post .task-title .has-error {
+  color: red;
+  background-color: yellow;
+}
+
+.feed-post .task-title .task-title-label{
+  
+}
+
+.feed-post .task-title .task-title-edit{
+  display: none;
+  width: 500px;
+  margin-top: -10px;
+  margin-left: 17px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.feed-post .task-done {
+  margin-left: 20px;
+}
+
+.feed-post .timestamp {
+  margin-right: 15px; 
+}
+
+.feed-post .task-buttons {
+  margin-left: auto;
+  visibility: hidden;
+}
+
+.feed-post:hover .task-buttons {
+  visibility: visible;
+}
+
+.feed-post .task-buttons .task-icon {
+  font-size: 2em;
+  padding: 3px 0;
+  color: #aaaaaa;
+  transition: color 0.1s ease-in;
+}
+
+.feed-post .task-buttons .task-icon:hover {
+  font-size: 2em;
+  padding: 1px 0;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.form-auth{
+  max-width: 330px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.aclr_class img {
+  width: 100%;
+  height: 100%;
+}
+
+.aclr_class ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 40px 0 0;
+}
+
+.aclr_class li {
+  display: inline-block;
+  width: 100%;
+  padding: 22px 0;
+  margin: 0;
+  border-top: 1px solid #D5DDE4;
+}
+
+.aclr_class a, a.visited{
+  color: #5FB6E1;
+  text-decoration: none;
+}
+
+.aclr_class span {
+  color: #2C3238;
+}
+
+
+.myBody {
+  background: #FFFFFF;
+  text-align: center;
+  margin: 100px auto;
+  max-width: 800px;
+  padding: 0 40px;
+  font: 18px normal;
+}
+
+#searchIcon, #avatar {
+  width: 50%;
+  border-radius: 50%;
+  margin: 0 25% 0 25%;
+}
+
+#username {
+  margin: 10px 0 0;
+}
+
+.button {
+  border-color: #5FB6E1;
+  background: #5FB6E1;
+  color: #fff;
+}
+
+#error {
+  width: 100%;
+  padding: 22px 0;
+  background: #FFE6B2;
+  color: #C5A14E;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#profile {
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #D5DDE4;
+  padding: 40px 0 0;
+  margin: -40px 0 0;
+}

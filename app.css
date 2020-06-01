@@ -1,0 +1,991 @@
+/* @font-face {
+    font-family: GameFont;
+    src: url(game-font.babe3371.ttf);
+    font-weight: 800
+} */
+
+.TicTacToe {
+    background-color: #222326;
+    color: #f8f8f8;
+    width: 100%;
+    height: 100vh;
+    font-family: Economica-Bold, Serif;
+    font-size: 1.8rem
+}
+
+.title {
+    margin: 20px;
+    font-size: 2rem
+}
+
+.message {
+    font-style: italic
+}
+
+.settings,
+.totals {
+    background-color: #222326
+}
+
+.line {
+    width: 40vw;
+    height: 1px;
+    margin: 20px;
+    background-color: #f8f8f8
+}
+
+.item {
+    float: left;
+    cursor: default
+}
+
+.game-item {
+    width: 3.5rem;
+    font-size: 3.5rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    font-family: GameFont
+}
+
+.item-o {
+    color: #ef9a9a
+}
+
+.item-x {
+    color: #90caf9
+}
+
+.item-clickable {
+    float: left;
+    cursor: pointer
+}
+
+.highlighted {
+    color: #9fc7aa
+}
+
+.main-button {
+    margin: 10px;
+    font-size: 1.5rem
+}
+
+.button-pair {
+    margin: 10px;
+    font-size: 1.25rem
+}
+
+.button {
+    cursor: pointer
+}
+
+.green {
+    color: #9fc7aa;
+    text-decoration: underline
+}
+
+.side {
+    display: inline;
+    margin: 10px
+}
+
+.totals {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 15px
+}
+
+.blue-green {
+    animation-name: blue-green;
+    animation-duration: 3s
+}
+
+.red-green {
+    animation-name: red-green;
+    animation-duration: 3s
+}
+
+@keyframes blue-green {
+    0% {
+        color: #90caf9
+    }
+
+    to {
+        color: #9fc7aa
+    }
+}
+
+@keyframes red-green {
+    0% {
+        color: #ef9a9a
+    }
+
+    to {
+        color: #9fc7aa
+    }
+}
+
+.slick-slider {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent
+}
+
+.slick-list,
+.slick-slider {
+    position: relative;
+    display: block
+}
+
+.slick-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0
+}
+
+.slick-list:focus {
+    outline: none
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand
+}
+
+.slick-slider .slick-list,
+.slick-slider .slick-track {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.slick-track:after,
+.slick-track:before {
+    display: table;
+    content: ""
+}
+
+.slick-track:after {
+    clear: both
+}
+
+.slick-loading .slick-track {
+    visibility: hidden
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px
+}
+
+[dir=rtl] .slick-slide {
+    float: right
+}
+
+.slick-slide img {
+    display: block
+}
+
+.slick-slide.slick-loading img {
+    display: none
+}
+
+.slick-slide.dragging img {
+    pointer-events: none
+}
+
+.slick-initialized .slick-slide {
+    display: block
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent
+}
+
+.slick-arrow.slick-hidden {
+    display: none
+}
+
+/* .slick-loading .slick-list {
+    background: #fff url(ajax-loader.dd4d6c6b.gif) 50% no-repeat
+} */
+
+.slick-next,
+.slick-prev {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none
+}
+
+.slick-next,
+.slick-next:focus,
+.slick-next:hover,
+.slick-prev,
+.slick-prev:focus,
+.slick-prev:hover {
+    color: transparent;
+    outline: none;
+    background: transparent
+}
+
+.slick-next:focus:before,
+.slick-next:hover:before,
+.slick-prev:focus:before,
+.slick-prev:hover:before {
+    opacity: 1
+}
+
+.slick-next.slick-disabled:before,
+.slick-prev.slick-disabled:before {
+    opacity: .25
+}
+
+.slick-next:before,
+.slick-prev:before {
+    font-family: slick;
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.slick-prev {
+    left: -25px
+}
+
+[dir=rtl] .slick-prev {
+    right: -25px;
+    left: auto
+}
+
+.slick-prev:before {
+    content: "←"
+}
+
+[dir=rtl] .slick-prev:before {
+    content: "→"
+}
+
+.slick-next {
+    right: -25px
+}
+
+[dir=rtl] .slick-next {
+    right: auto;
+    left: -25px
+}
+
+.slick-next:before {
+    content: "→"
+}
+
+[dir=rtl] .slick-next:before {
+    content: "←"
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0
+}
+
+.slick-dots li,
+.slick-dots li button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    padding: 5px;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent
+}
+
+.slick-dots li button:focus,
+.slick-dots li button:hover {
+    outline: none
+}
+
+.slick-dots li button:focus:before,
+.slick-dots li button:hover:before {
+    opacity: 1
+}
+
+.slick-dots li button:before {
+    font-family: slick;
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "•";
+    text-align: center;
+    opacity: .25;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #000
+}
+
+/* @font-face {
+    font-family: RobotoCondensed;
+    src: url(roboto-condensed.light.b2508121.ttf);
+    font-weight: 800
+}
+
+@font-face {
+    font-family: Economica-Bold;
+    src: url(Economica-Bold.8afe7b2f.ttf)
+} */
+
+p {
+    font-size: 18px;
+    font-family: RobotoCondensed;
+    font-weight: 700;
+    margin: 10px
+}
+
+a:active,
+a:hover,
+a:link {
+    color: #0d47a1
+}
+
+a:visited {
+    color: #4527a0
+}
+
+.App {
+    text-align: center
+}
+
+.App-logo {
+    animation: App-logo-spin 20s linear infinite;
+    height: 80px
+}
+
+.App-header {
+    height: 23px;
+    padding: 20px;
+    font-family: Economica-Bold, Serif
+}
+
+.header-e {
+    display: inline;
+    font-size: 30px;
+    margin-left: 6px;
+    margin-right: 6px
+}
+
+.header-left {
+    float: left
+}
+
+.header-right {
+    float: right
+}
+
+.blue-link {
+    color: #15c
+}
+
+.no-link-dec {
+    text-decoration: none;
+    color: #fff
+}
+
+.p,
+.p-medium {
+    font-size: 18px;
+    font-family: RobotoCondensed;
+    font-weight: 700;
+    margin: 10px
+}
+
+.p-medium {
+    font-size: 20px
+}
+
+.h-1 {
+    font-size: 50px
+}
+
+.h-1,
+.h-2 {
+    font-family: Economica-Bold, Serif
+}
+
+.h-2 {
+    font-size: 45px
+}
+
+.h-3 {
+    font-size: 40px
+}
+
+.h-3,
+.h-4 {
+    font-family: Economica-Bold, Serif
+}
+
+.h-4 {
+    font-size: 30px
+}
+
+.h-5 {
+    font-family: Economica-Bold, Serif;
+    font-size: 25px
+}
+
+.tiny-text {
+    font-size: 14px
+}
+
+.selected {
+    border-bottom: 3px solid #000;
+    border-left: 3px solid #000
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.cursor:hover {
+    color: #15c;
+    animation: to-blue;
+    animation-duration: .25s
+}
+
+.profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px
+}
+
+.contact {
+    font-family: Economica;
+    padding: 15px;
+    margin-right: 10px;
+    text-align: center
+}
+
+.inline {
+    margin: 5px;
+    font-size: 18px
+}
+
+.App-portfolio {
+    text-align: center
+}
+
+.projects {
+    padding-top: 10px
+}
+
+.portfolio_pic {
+    text-align: left;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    width: 220px;
+    height: 220px
+}
+
+.portfolio_img {
+    width: 220px;
+    height: 220px;
+    border-bottom: 3px solid #000;
+    position: absolute;
+    object-fit: cover;
+    filter: brightness(90%)
+}
+
+.darken_img {
+    background-color: #000;
+    filter: brightness(10%);
+    animation-name: darken;
+    animation-duration: 1s
+}
+
+.darken_img_less {
+    background-color: grey;
+    filter: brightness(50%);
+    animation-name: darken_less;
+    animation-duration: 1s
+}
+
+.portfolio_text {
+    font-family: RobotoCondensed, Serif;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    border-radius: 4px;
+    padding: 10px;
+    bottom: 0;
+    animation-name: fade-in;
+    animation-duration: 1s
+}
+
+.no_text {
+    display: none
+}
+
+.inline {
+    display: inline
+}
+
+.email-field {
+    padding: 8px
+}
+
+.email-button {
+    border-bottom: 2px solid #bdbdbd;
+    border-radius: 2px;
+    padding: 8px;
+    color: #000;
+    background: #efefef;
+    cursor: pointer
+}
+
+.email-button:hover {
+    animation: button-blue;
+    animation-duration: .5s;
+    color: #15c;
+    border-color: #15c
+}
+
+.divider {
+    width: 70vw;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #bbb
+}
+
+.CourseInfo {
+    flex-direction: column;
+    line-height: 17px
+}
+
+.CourseInfo,
+.CourseInfoRow {
+    display: flex
+}
+
+.CourseInfo_div {
+    display: flex;
+    flex: 1
+}
+
+.CourseInfo_left {
+    flex: 1;
+    text-align: right
+}
+
+.CourseInfo_right {
+    flex: 1
+}
+
+.CourseSlider_container {
+    display: flex;
+    padding-left: 18px;
+    padding-right: 18px
+}
+
+.Slider {
+    width: 500px
+}
+
+.slide_item {
+    width: 550px;
+    height: 240px
+}
+
+.slide_item_pic {
+    width: 515px;
+    height: 240px;
+    object-fit: cover
+}
+
+.slick-list {
+    padding: 0 !important
+}
+
+.slick-dots {
+    padding-top: 0;
+    margin-top: 0;
+    line-height: 0;
+    position: relative
+}
+
+.slide_item_text {
+    font-family: RobotoCondensed, Serif;
+    width: 460px;
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .6)
+}
+
+.slide_item_small {
+    width: 520px
+}
+
+.slide_item_pic_small {
+    width: 420px;
+    margin-left: 30px
+}
+
+.slide_item_text_small {
+    width: 360px;
+    margin-left: 50px
+}
+
+.slide_item_ultra_small {
+    width: 400px
+}
+
+.slide_item_pic_ultra_small {
+    width: 380px
+}
+
+.slide_item_text_ultra_small {
+    width: 340px
+}
+
+.About_info {
+    line-height: 17px
+}
+
+.Reviews {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: inline-block
+}
+
+.Review {
+    display: inline-flex;
+    margin: 20px;
+    border-bottom: 2px solid #bdbdbd
+}
+
+.Review,
+.Review-img {
+    width: 350px;
+    height: 200px
+}
+
+.Review-img {
+    position: absolute;
+    object-fit: cover;
+    filter: opacity(7%)
+}
+
+.Review-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1a237e
+}
+
+.Review-content-top {
+    display: flex;
+    flex: 1
+}
+
+.Review-content-middle {
+    flex: 7
+}
+
+.Review-content-bottom {
+    display: flex;
+    flex: 2
+}
+
+.AboutCourses {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: inline-block
+}
+
+.AboutCourse {
+    display: inline-flex;
+    width: 480px;
+    height: 270px;
+    margin: 20px;
+    text-decoration: none
+}
+
+.AboutCourse-img {
+    width: 480px;
+    height: 270px;
+    position: absolute;
+    object-fit: cover;
+    filter: opacity(80%)
+}
+
+.AboutCourse-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff
+}
+
+.AboutCourse-content-top {
+    display: flex;
+    flex: 10
+}
+
+.AboutCourse-content-bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .65)
+}
+
+.AboutCourse-img-small,
+.AboutCourse-small {
+    width: 350px;
+    height: 200px
+}
+
+.AboutCourse-content-bottom-small {
+    flex: 20
+}
+
+.Articles,
+.Videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.Articles {
+    text-align: center;
+    margin: 20px
+}
+
+.footer_icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    margin-left: 8px
+}
+
+.footer_bottom {
+    bottom: 10
+}
+
+.fade-1,
+.fade-2,
+.fade-3,
+.fade-4,
+.fade-5,
+.fade-6,
+.fade-7,
+.fade-8 {
+    animation-name: fade-in
+}
+
+.fade-1 {
+    animation-duration: 1s
+}
+
+.fade-2 {
+    animation-duration: 2s
+}
+
+.fade-3 {
+    animation-duration: 3s
+}
+
+.fade-4 {
+    animation-duration: 4s
+}
+
+.fade-5 {
+    animation-duration: 5s
+}
+
+.fade-6 {
+    animation-duration: 6s
+}
+
+.fade-7 {
+    animation-duration: 7s
+}
+
+.fade-8 {
+    animation-duration: 8s
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes to-blue {
+    0% {
+        color: #000
+    }
+
+    to {
+        color: #15c
+    }
+}
+
+@keyframes button-blue {
+    0% {
+        color: #000;
+        border-color: #000
+    }
+
+    to {
+        color: #15c;
+        border-color: #15c
+    }
+}
+
+@keyframes darken {
+    0% {
+        filter: brightness(90%)
+    }
+
+    to {
+        filter: brightness(10%)
+    }
+}
+
+@keyframes darken_less {
+    0% {
+        filter: brightness(90%)
+    }
+
+    to {
+        filter: brightness(50%)
+    }
+}
+
+/* @font-face {
+    font-family: RobotoCondensed;
+    src: url(roboto-condensed.light.b2508121.ttf);
+    font-weight: 800
+}
+
+@font-face {
+    font-family: EconomicaBold;
+    src: url(Economica-Bold.8afe7b2f.ttf)
+} */
+
+body {
+    text-align: center;
+    font-size: 20px;
+    padding: 2.5%;
+    font-family: RobotoCondensed
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: EconomicaBold
+}
+
+.typerace-button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px;
+    background-color: #fff
+}
+
+.typerace-text {
+    width: 75%;
+    margin-left: 12.5%
+}
+
+.typerace-input {
+    width: 500px;
+    height: 50px;
+    font-size: 18px
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif
+}

@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "username": "root",
+    "password": null,
+    "host": "localhost",
+    "port": 27017,
+    "database": "mongo-test",
+    "operatorsAliases": false
+  },
+  "stage": {
+    "username": "root",
+    "password": null,
+    "host": "mongodb://test:test@ds137054.mlab.com",
+    "port": 37054,
+    "database": "mongo-test",
+    "operatorsAliases": false
+  },
+  "prod": {
+    "username": "test",
+    "password": "test",
+    "host": "ds137054.mlab.com",
+    "port": 37054,
+    "database": "mongo-test",
+    "operatorsAliases": false
+  }
+}
