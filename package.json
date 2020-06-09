@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "prod:start": "node app.js",
+    "start": "nodemon app.js",
+    "prod:start": "nodemon app.js",
     "s3-test": "node aws/s3read.js"
   },
   "repository": {

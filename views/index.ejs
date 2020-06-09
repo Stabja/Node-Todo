@@ -10,127 +10,137 @@
     crossorigin="anonymous"
   >
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
-  <link rel="stylesheet" type="text/css" href="css/uikit.css"/>
   <link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
+  <link rel="stylesheet" type="text/css" href="css/uikit.css"/>
   <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 
-<body ng-app="AppCtrl" class="main-app-page">
+<body
+  ng-app="AppCtrl"
+  ng-controller="angularController"
+>
+  <div class="container main-app-page">
 
-  <div ng-controller="angularController" class="container create-task-form">
-    <h1>Todo Creator</h1>
-    <form class="row" method="POST">
-      <div class="form-group col-sm-8">
-        <input 
-          id="create-task-input" 
-          class="form-control" 
-          type="text" 
-          placeholder="Add Task" 
-          name="title"
-        />
-      </div>
-      <div class="button-group col-sm-3">
-        <button
-          id="create-task-button"
-          class="btn btn-primary"
-          type="button"
-        >
-          Create
-        </button>
-        <button 
-          type="button" 
-          class="btn btn-success" 
-          ng-click="deselect()"
-        >
-          Clear
-        </button>
-      </div>
-    </form>
-  </div>
-    
-  <div class="posts-wrapper" >
-    <div
-      class="feed-post" 
-      ng-repeat="task in tasksList"
-      ng-class-odd="'odd'"
-      ng-class-even="'even'"
-    >
-      <div 
-        class="checkbox task-title"
-        id="task-title"
-      >
-        <label>
+    <div class="create-task-form">
+      <h1>Todo Creator</h1>
+      <form class="row" method="POST">
+        <div class="form-group col-sm-8">
           <input 
-            id="{{ 'checkbox_' + task._id }}"
-            class="task-title-input"
-            type="checkbox"
-            ng-checked="{{ task.done }}"
-            ng-model="deleted"
-          />
-          <span 
-            id="{{ 'tasklabel_' + task._id }}"
-            class="task-title-label"
-            ng-class="{strike: deleted, bold: important, 'has-error': error}"
-            ng-click="markDone(task._id)"
-          >
-            {{ task.title }}
-          </span>
-          <input 
-            id="{{ 'taskedit_' + task._id }}"
-            class="task-title-edit"
-            type="text"
+            id="create-task-input" 
+            class="form-control" 
+            type="text" 
+            placeholder="Add Task" 
             name="title"
-            value="{{ task.title }}"
           />
-        </label>
-      </div>
-      
-      <div class="task-buttons">
-        <svg 
-          id="{{ 'downloadicon_' + task._id }}" 
-          class="task-download-icon task-icon bi bi-download" 
-          width="1em" height="1em" viewBox="0 0 16 16" 
-          fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+        </div>
+        <div class="button-group col-sm-3">
+          <button
+            id="create-task-button"
+            class="btn btn-primary"
+            type="button"
+          >
+            Create
+          </button>
+          <button 
+            type="button" 
+            class="btn btn-success" 
+            ng-click="deselect()"
+          >
+            Clear
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="posts-wrapper">
+      <div
+        class="feed-post" 
+        ng-repeat="task in tasksList"
+        ng-class-odd="'odd'"
+        ng-class-even="'even'"
+      >
+        <div 
+          class="checkbox task-title"
+          id="task-title"
         >
-          <path fill-rule="evenodd" d="M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z" clip-rule="evenodd"/>
-          <path fill-rule="evenodd" d="M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z" clip-rule="evenodd"/>
-          <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z" clip-rule="evenodd"/>
-        </svg>
-        <svg 
-          id="{{ 'editicon_' + task._id }}" 
-          class="task-edit-icon task-icon bi bi-pencil-square" 
-          width="1em" height="1em" viewBox="0 0 16 16" 
-          fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
-          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"/>
-        </svg>
-        <svg 
-          id="{{ 'deleteicon_' + task._id }}"
-          class="task-delete-icon task-icon bi bi-trash"
-          ng-click="removeTask(task._id)"
-          width="1em" height="1em" viewBox="0 0 16 16" 
-          fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
-          <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
-        </svg>
+          <div class="outer-div">
+            <input
+              id="{{ 'checkbox_' + task._id }}"
+              class="task-title-input"
+              type="checkbox"
+              ng-checked="{{ task.done }}"
+              ng-model="deleted"
+              ng-click="markDone(task._id)"
+            />
+            <label 
+              id="{{ 'tasklabel_' + task._id }}"
+              class="task-title-label"
+              ng-class="{
+                strike: deleted, 
+                bold: important, 
+                'has-error': error
+              }"
+            >
+              {{ task.title }}
+            </label>
+            <input 
+              id="{{ 'taskedit_' + task._id }}"
+              class="task-title-edit"
+              type="text"
+              name="title"
+              value="{{ task.title }}"
+            />
+          </div>
+        </div>
+          
+        <div class="task-buttons">
+          <svg 
+            id="{{ 'downloadicon_' + task._id }}" 
+            class="task-download-icon task-icon bi bi-download" 
+            width="1em" height="1em" viewBox="0 0 16 16" 
+            fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill-rule="evenodd" d="M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z" clip-rule="evenodd"/>
+          </svg>
+          <svg 
+            id="{{ 'editicon_' + task._id }}" 
+            class="task-edit-icon task-icon bi bi-pencil-square" 
+            width="1em" height="1em" viewBox="0 0 16 16" 
+            fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"/>
+          </svg>
+          <svg 
+            id="{{ 'deleteicon_' + task._id }}"
+            class="task-delete-icon task-icon bi bi-trash"
+            ng-click="removeTask(task._id)"
+            width="1em" height="1em" viewBox="0 0 16 16" 
+            fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
 
+  </div>
+  
+  <script type="text/javascript" src="js/uikit.min.js"></script>
+  <script type="text/javascript" src="js/uikit-icons.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script 
     src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
     crossorigin="anonymous">
   </script>
-  <script type="text/javascript" src="js/uikit.min.js"></script>
-  <script type="text/javascript" src="js/uikit-icons.min.js"></script>
-  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-  <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
   <script type="text/javascript" src="js/require.js"></script>
   <script type="text/javascript" src="js/controller.js"></script>
+  <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
   <!-- <script type="text/javascript" src="js/Chart.min.js"></script>
   <script type="text/javascript" src="js/chartScripts.js"></script> -->
   <script>

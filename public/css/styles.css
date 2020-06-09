@@ -1,6 +1,19 @@
+body {
+  background-color: #002b36;
+}
+
+.container{
+  max-width: 1000px;
+}
+
 .main-app-page {
   margin: 0 auto;
-  background-color: #002b36;
+  width: 100%;
+  min-height: 100vh;
+  padding: 4px 50px;
+  padding-bottom: 150px;
+  color: white;
+  background-color: #073642;
 }
 
 .main-app-page header {
@@ -11,41 +24,52 @@
   max-width: 70%;
 }
 
-
-.container{
-  max-width: 1000px;
-}
-
-.create-task-form {
-  width: 100%;
-  padding: 50px;
-  padding-bottom: 100px;
-  background-color: #073642;
-}
-
-.create-task-form h1 {
+.main-app-page h1 {
   margin: 20px;
   color: #b3a1a1;
 }
 
+
+
+.create-task-form {
+  padding: 10px 30px;
+}
+
 .create-task-form .form-group {
-  margin-left: 10px;
+  display: flex;
+  flex-grow: 1;
+  margin-right: auto;
+}
+
+.create-task-form .form-group input {
+  margin: 10px;
 }
 
 .create-task-form .button-group {
-  width: 100%;
+  margin-left: auto; 
 }
 
-.create-task-form .button-group .btn-primary{
+.create-task-form .button-group button {
+  margin: 10px;
+}
+
+.create-task-form .button-group .btn-success {
   margin-left: auto;
 }
-
 
 
 
 .posts-wrapper {
   margin-top: 20px;
 }
+
+.posts-wrapper .spinner-border {
+  margin-left: 46%;
+  padding: 30px;
+  margin-top: 100px;
+  font-size: 2em;
+}
+
 
 .feed-post {
   height: 45px;
@@ -73,18 +97,58 @@
   height: 100%;
 }
 
-.feed-post .task-title label {
+.feed-post .task-title .outer-div {
+  margin-top: -2px;
+}
+
+
+.feed-post .task-title .task-title-label {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   text-align: center;
   align-items: center;
   vertical-align: center;
   margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 20px;
+  position: relative;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0 0.25em 0;
+  user-select: none;
 }
 
+.feed-post .task-title .task-title-label:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feed-post .task-title .task-title-label::before {
+  position: absolute;
+  content: attr(data-content);
+  color: #9c9e9f;
+  clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #b3a1a1;
+  transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
 .feed-post .task-title .task-title-input {
-  font-size: 2em;
-  border: 1px solid black;
+  vertical-align: center;
+  top: 6px;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: #363839;
+  border: 1px solid #bdc1c6;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
 }
 
 .feed-post .task-title span {
@@ -95,10 +159,6 @@
   align-items: center;
 }
 
-.feed-post .task-title span:hover{
-  font-weight: bold;
-  cursor: pointer;
-}
 
 .feed-post:hover .task-title {
   color: #fff;
@@ -119,10 +179,6 @@
 .feed-post .task-title .has-error {
   color: red;
   background-color: yellow;
-}
-
-.feed-post .task-title .task-title-label{
-  
 }
 
 .feed-post .task-title .task-title-edit{
